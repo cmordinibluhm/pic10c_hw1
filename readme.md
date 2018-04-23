@@ -21,7 +21,7 @@ llegar mas cerco a siete y media que el repartidor para ganar dinero
 - keep track of the players bet to deduct or add from total money
 - input validation so that the user can't bet more than they have
 - 3 classes: player, card, and hand
-- cards.h and card.cpp and siete-y-medio.cpp
+- cards.h and cards.cpp and siete-y-medio.cpp
 
 #### keep a log of the rounds played (thus must play multiple rounds)
 - important information about every round should be recorded in gamelog.txt
