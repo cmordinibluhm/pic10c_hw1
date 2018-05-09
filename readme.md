@@ -1,7 +1,9 @@
 # siete y media assignment
 
-### EL JUEGO
+## tabla de contenido
+[add in all headings in nested structure with internal links to the different parts of the file]
 
+### EL JUEGO
 #### OBJETIVO
 llegar mas cerco a siete y media que el repartidor para ganar dinero
 
@@ -15,7 +17,7 @@ llegar mas cerco a siete y media que el repartidor para ganar dinero
 
 
 
-### TO DO:
+### TO DO
 #### write program to play siete y media against the player
 - keep count of the players money (starts at 100 pesos)
 - keep track of the players bet to deduct or add from total money
@@ -28,15 +30,32 @@ llegar mas cerco a siete y media que el repartidor para ganar dinero
 
 #### submission
 
-### IDEAS:
-- use Qt para los graficos?
-- include the history at the beginning
+### IDEAS
+- use Qt para los graficos? No, that time should be allocated to working on my final project
+- include the history of the card game at the beginning of the program
+- table of contents for this readme file with internal links to the different sections
+- escribir en espanol lo mas posible
+
+### QUESTIONS I HAVE ABOUT THE ASSIGNMENT
+- how do I make a gamelog.txt to store important information? I have never done this kind of thing before.
 
 ### WHAT I'M GRADED ON
 - at least 20 commit messages. These should be descriptive and concise
 - at least a master and experimental branch
 - at least 1 merge that is non-fast-forward
 - other: do something extra (ie conflict resolution, 3-way merging, creating .gitignore files)
+    - I will do a .gitignore for sure
 - have only txt files unless there is a really good reason, in which case you have to explain it in readme.md
+
+
+### PROJECT JOURNAL
+
+Journal begins at the time of the fourth commit.
+
+#### 08.05.2018
+Today I worked on the assignment for the first time in quite a while. I modified readme.md a bit and copied the code Professor Salazar provided for us for the files cards.h, cards.cpp, and siete-y-medio.cpp.
+
+
+
 
 
