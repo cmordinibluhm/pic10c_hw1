@@ -133,7 +133,7 @@ string Card::get_english_rank() const {
     string rankName;
     switch (rank) {
         case AS:
-            rankName = "One";
+            rankName = "Ace";
             break;
         case DOS:
             rankName = "Two";
@@ -188,8 +188,17 @@ bool Card::operator < (Card card2) const {
 //-----------------------------------------------------------------------------//
 // Implemente the member functions of the Hand class here.
 
-Hand::Hand() {
-    vec.pushback(Card());
+Hand::Hand() : vec_of_cards() {
+    vec_of_cards.push_back(Card());
+}
+
+void Hand::list() const {
+    for (size_t i = 0; i != vec_of_cards.size(); ++i) {
+        std::cout << vec_of_cards[i].get_spanish_rank() << " de " << vec_of_cards[i].get_spanish_suit() << "\t \t (";
+        
+        std::cout << vec_of_cards[i].get_english_rank() << " of " << vec_of_cards[i].get_english_suit() << ") \n";
+    }
+    
 }
 
 
@@ -199,9 +208,11 @@ Hand::Hand() {
 //-----------------------------------------------------------------------------//
 // Implemente the member functions of the Player class here.
 
-Player::Player(int m = 100) : money(m) { }
+Player::Player(int m) : money(m) { }
 
-
+void Player::lose_bet(int bet) {
+    money -= bet;
+}
 
 
 

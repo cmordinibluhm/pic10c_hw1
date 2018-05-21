@@ -62,9 +62,15 @@ private:
 class Hand {
 public:
     
-    vector<Card> vec;
-    // A vector of Cards
+    vector<Card> vec_of_cards; // A vector of Cards
+    
+    /**
+     construct a Hand with a random Card
+     
+     */
     Hand();
+    
+    void list() const;
     
     // You decide what functions you'll need...
     
@@ -85,11 +91,14 @@ public:
      
      @param m the amount of money the Player begins with (default 100)
      */
-    Player(int m);
+    Player(int m = 100);
     
     int get_money() const {
         return money;
     }
+    
+    void lose_bet(int bet);
+    
     // You decide what functions you'll need...
     
 private:
