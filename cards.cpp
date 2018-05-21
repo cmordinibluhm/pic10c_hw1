@@ -9,9 +9,9 @@ You might or might not need these two extra libraries
 */
 
 
-/* *************************************************
-   Card class
-   ************************************************* */
+//-----------------------------------------------------------------------------//
+//                          Card class implementations                         //
+//-----------------------------------------------------------------------------//
 
 /* 
    Default constructor for the Card class.
@@ -105,18 +105,66 @@ string Card::get_spanish_rank() const {
    return rankName;
 }
 
-
-
 // Accessor: returns a string with the suit of the card in English 
 // This is just a stub! Modify it to your liking.
 string Card::get_english_suit() const { 
-   return "";
+    string suitName;
+    switch (suit) {
+        case OROS:
+            suitName = "golds";
+            break;
+        case COPAS:
+            suitName = "cups";
+            break;
+        case ESPADAS:
+            suitName = "swords";
+            break;
+        case BASTOS:
+            suitName = "clubs";
+            break;
+        default: break;
+    }
+    return suitName;
 }
 
 // Accessor: returns a string with the rank of the card in English 
 // This is just a stub! Modify it to your liking.
 string Card::get_english_rank() const { 
-   return "";
+    string rankName;
+    switch (rank) {
+        case AS:
+            rankName = "Ace";
+            break;
+        case DOS:
+            rankName = "Two";
+            break;
+        case TRES:
+            rankName = "Three";
+            break;
+        case CUATRO:
+            rankName = "Four";
+            break;
+        case CINCO:
+            rankName = "Five";
+            break;
+        case SEIS:
+            rankName = "Six";
+            break;
+        case SIETE:
+            rankName = "Seven";
+            break;
+        case SOTA:
+            rankName = "Squire";
+            break;
+        case CABALLO:
+            rankName = "Knight";
+            break;
+        case REY:
+            rankName = "King";
+            break;
+        default: break;
+    }
+    return rankName;
 }
 
 
@@ -135,14 +183,38 @@ bool Card::operator < (Card card2) const {
 
 
 
-/* *************************************************
-   Hand class
-   ************************************************* */
+//-----------------------------------------------------------------------------//
+//                          Hand class implementations                         //
+//-----------------------------------------------------------------------------//
 // Implemente the member functions of the Hand class here.
 
+Hand::Hand() : vec_of_cards() {
+    vec_of_cards.push_back(Card());
+}
+
+void Hand::list() const {
+    for (size_t i = 0; i != vec_of_cards.size(); ++i) {
+        std::cout << vec_of_cards[i].get_spanish_rank() << " de " << vec_of_cards[i].get_spanish_suit() << "\t \t (";
+        
+        std::cout << vec_of_cards[i].get_english_rank() << " of " << vec_of_cards[i].get_english_suit() << ") \n";
+    }
+    
+}
 
 
-/* *************************************************
-   Player class
-   ************************************************* */
+
+//-----------------------------------------------------------------------------//
+//                          Player class implementations                       //
+//-----------------------------------------------------------------------------//
 // Implemente the member functions of the Player class here.
+
+Player::Player(int m) : money(m) { }
+
+void Player::lose_bet(int bet) {
+    money -= bet;
+}
+
+
+
+
+

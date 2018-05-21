@@ -55,6 +55,8 @@ Journal begins at the time of the fourth commit.
 #### 08.05.2018
 Today I worked on the assignment for the first time in quite a while. I modified readme.md a bit and copied the code Professor Salazar provided for us for the files cards.h, cards.cpp, and siete-y-medio.cpp.
 
+#### 8.20.18
+Today I started adding my own formatting to cards.h and cards.cpp as well as implementing some of their constructors and member functions.
 
 
 

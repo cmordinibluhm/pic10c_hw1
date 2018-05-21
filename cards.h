@@ -1,9 +1,3 @@
-/* *************************************
- Ricardo Salazar, February 26, 2015
- 
- Interface of a simple Card class
- ************************************* */
-
 #include <string>
 #include <vector>
 #include <fstream>
@@ -57,10 +51,12 @@ public:
     bool operator < (Card card2) const;
     
 private:
+
     suit_t suit; //suit of the card
     rank_t rank; //rank of the card
     
 }; //----------------------------------end of Card class------------------------//
+
 
 /**
  Hand class stores a vector of cards
@@ -68,8 +64,16 @@ private:
  */
 class Hand {
 public:
-    // A vector of Cards
+    
+    vector<Card> vec_of_cards; // A vector of Cards
+    
+    /**
+     construct a Hand with a random Card
+     
+     */
     Hand();
+    
+    void list() const;
     
     // You decide what functions you'll need...
     
@@ -78,20 +82,32 @@ private:
     
 }; //----------------------------------end of Hand class------------------------//
 
+
 /**
  Player class stores the money that the player has
  
  */
 class Player {
 public:
-    // Constructor.
-    //    Assigns initial amount of money
-    Player(int m);
+    
+    /**
+     constructor for Player class takes an initial value for the Player's money
+     or defaults it to 100
+     
+     @param m the amount of money the Player begins with (default 100)
+     */
+    Player(int m = 100);
+    
+    int get_money() const {
+        return money;
+    }
+    
+    void lose_bet(int bet);
     
     // You decide what functions you'll need...
     
 private:
-    int money;
+    int money; //amount of money the player has left
     // You decide what extra fields (if any) you'll need...
     
 }; //----------------------------------end of Player class----------------------//
