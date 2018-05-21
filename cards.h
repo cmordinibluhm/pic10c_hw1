@@ -1,9 +1,3 @@
-/* *************************************
- Ricardo Salazar, February 26, 2015
- 
- Interface of a simple Card class
- ************************************* */
-
 #include <string>
 #include <vector>
 #include <fstream>
@@ -25,6 +19,10 @@ enum suit_t {OROS, COPAS, ESPADAS, BASTOS};
  The rank of SOTA is reported as  static_cast<int>(SOTA) + 1 = 9 + 1 = 10
  */
 enum rank_t {AS, DOS, TRES, CUATRO, CINCO, SEIS, SIETE, SOTA=9, CABALLO=10, REY=11};
+
+//-----------------------------------------------------------------------------//
+//                          Card class interface                               //
+//-----------------------------------------------------------------------------//
 
 class Card {
 public:
@@ -57,9 +55,14 @@ private:
     rank_t rank;
 };
 
+//-----------------------------------------------------------------------------//
+//                          Hand class interface                               //
+//-----------------------------------------------------------------------------//
 
 class Hand {
 public:
+    
+    vector<Card> vec;
     // A vector of Cards
     Hand();
     
@@ -69,17 +72,25 @@ private:
     // You decide what fields you'll need...
 };
 
+//-----------------------------------------------------------------------------//
+//                          Player class interface                             //
+//-----------------------------------------------------------------------------//
 
 class Player {
 public:
-    // Constructor.
-    //    Assigns initial amount of money
+    
+    /**
+     constructor for Player class takes an initial value for the Player's money
+     or defaults it to 100
+     
+     @param m the amount of money the Player begins with (default 100)
+     */
     Player(int m);
     
     // You decide what functions you'll need...
     
 private:
-    int money;
+    int money; //amount of money the player has left
     // You decide what extra fields (if any) you'll need...
 };
 
