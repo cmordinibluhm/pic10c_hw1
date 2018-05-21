@@ -26,6 +26,10 @@ enum suit_t {OROS, COPAS, ESPADAS, BASTOS};
  */
 enum rank_t {AS, DOS, TRES, CUATRO, CINCO, SEIS, SIETE, SOTA=9, CABALLO=10, REY=11};
 
+/**
+ Card class represents naipes by storing the suit and the rank (in Spanish and English)
+ 
+ */
 class Card {
 public:
     // Constructor assigns random rank & suit to card.
@@ -53,11 +57,15 @@ public:
     bool operator < (Card card2) const;
     
 private:
-    suit_t suit;
-    rank_t rank;
-};
+    suit_t suit; //suit of the card
+    rank_t rank; //rank of the card
+    
+}; //----------------------------------end of Card class------------------------//
 
-
+/**
+ Hand class stores a vector of cards
+ 
+ */
 class Hand {
 public:
     // A vector of Cards
@@ -67,9 +75,13 @@ public:
     
 private:
     // You decide what fields you'll need...
-};
+    
+}; //----------------------------------end of Hand class------------------------//
 
-
+/**
+ Player class stores the money that the player has
+ 
+ */
 class Player {
 public:
     // Constructor.
@@ -81,6 +93,7 @@ public:
 private:
     int money;
     // You decide what extra fields (if any) you'll need...
-};
+    
+}; //----------------------------------end of Player class----------------------//
 
 #endif

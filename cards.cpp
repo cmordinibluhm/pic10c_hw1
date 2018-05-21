@@ -31,16 +31,16 @@ Card::Card(){
 
    r = 1 + rand() % 10;  
    switch (r) {
-      case  1: rank = AS; break; 
+      case  1: rank = AS; break; //aces
       case  2: rank = DOS; break; 
       case  3: rank = TRES; break; 
       case  4: rank = CUATRO; break; 
       case  5: rank = CINCO; break; 
       case  6: rank = SEIS; break; 
       case  7: rank = SIETE; break; 
-      case  8: rank = SOTA; break; 
-      case  9: rank = CABALLO; break; 
-      case 10: rank = REY; break; 
+      case  8: rank = SOTA; break; //squire
+      case  9: rank = CABALLO; break; //knight
+      case 10: rank = REY; break; //king
       default: break;
    }
 }
