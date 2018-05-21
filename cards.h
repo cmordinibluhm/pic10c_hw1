@@ -87,6 +87,9 @@ public:
      */
     Player(int m);
     
+    int get_money() const {
+        return money;
+    }
     // You decide what functions you'll need...
     
 private:

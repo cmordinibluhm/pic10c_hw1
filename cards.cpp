@@ -188,6 +188,10 @@ bool Card::operator < (Card card2) const {
 //-----------------------------------------------------------------------------//
 // Implemente the member functions of the Hand class here.
 
+Hand::Hand() {
+    vec.pushback(Card());
+}
+
 
 
 //-----------------------------------------------------------------------------//
