@@ -10,14 +10,13 @@ using namespace std;
 
 // Global constants (if any)
 
-
 // Non member functions declarations (if any)
-
 
 // Non member functions implementations (if any)
 
-
 int main(){
+    
+    srand(time(NULL));
     
     Player player; //default construct a Player with 100 pesos
     Player dealer(900); //construct a dealer with 900 pesos
@@ -52,9 +51,6 @@ int main(){
             std::cout << "\n";
             player_hand.draw_card(card);
             
-            if (player_hand.get_total() > 7.5) {
-                player.lose_bet(bet);
-            }
         } //------------------------------------------ end player's turn -----------------------------------------//
     
         
@@ -84,24 +80,39 @@ int main(){
         double dt = dealer_hand.get_total();
         double pt = player_hand.get_total();
         
-        if (pt > 7.5) { //if the player busts
+        if (pt > 7.5) { //if the player busts (regardless of whether the dealer busts or not)
             player.lose_bet(bet);
             dealer.win_bet(bet);
+            std::cout << "You lose " << bet << ". ";
             
-        } else if ((pt <= 7.5) && (dt > 7.5)) {
+        } else if ((pt <= 7.5) && (dt > 7.5)) { //else if the dealer busts and you don't
             player.win_bet(bet);
             dealer.lose_bet(bet);
-            
+            std::cout << "You win " << bet << ". ";
+
         } else if ((dt < pt) && (pt <= 7.5)) { //else if the player gets closer to 7.5
             player.win_bet(bet);
             dealer.lose_bet(bet);
+            std::cout << "You win " << bet << ". ";
             
         } else if ((dt > pt) && (dt <= 7.5)) { //else if the dealer gets closer to 7.5
             player.lose_bet(bet);
             dealer.win_bet(bet);
+            std::cout << "You lose " << bet << ". ";
+            
+        } else {
+            std::cout << "It's a tie. ";
         }
-        
-        if ((player.get_money() <= 0) || (dealer.get_money() <= 0)) { new_round = false; }
+     
+        if ( player.get_money() <= 0) {
+            new_round = false;
+            std::cout << "You're out of money.";
+            
+        } else if (dealer.get_money() <= 0) {
+            new_round = false;
+            std::cout << "Congratulations. You beat the casino!";
+        }
+    
         
     } //--------------------------------------------------- end round ---------------------------------------------------//
     

@@ -29,6 +29,8 @@ public:
     // Constructor assigns random rank & suit to card.
     Card();
     
+    virtual ~Card() {}
+    
     // Accessors
     string get_spanish_suit() const;
     string get_spanish_rank() const;
@@ -81,6 +83,8 @@ public:
      */
     Hand();
     
+    virtual ~Hand() {}
+    
     void list() const;
     
     void draw_card(Card card);
@@ -115,6 +119,8 @@ public:
      @param m the amount of money the Player begins with (default 100)
      */
     Player(int m = 100);
+    
+    virtual ~Player() {}
     
     int get_money() const;
     

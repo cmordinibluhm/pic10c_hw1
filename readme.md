@@ -15,8 +15,6 @@ llegar mas cerco a siete y media que el repartidor para ganar dinero
 - Los naipes con numeros tiene el valor du sus numeros
 - Las sotas, los caballos y los reyes tiene valor de medio punto
 
-
-
 ### TO DO
 #### write program to play siete y media against the player
 - keep count of the players money (starts at 100 pesos)
@@ -30,10 +28,10 @@ llegar mas cerco a siete y media que el repartidor para ganar dinero
 
 #### submission
 
-### IDEAS
+### EXTRA IDEAS
 - use Qt para los graficos? No, that time should be allocated to working on my final project
-- include the history of the card game at the beginning of the program
-- table of contents for this readme file with internal links to the different sections
+- include the history of the card game at the beginning of the program?
+- table of contents for this readme file with internal links to the different sections? (Or more generally use this file as markdown practice?)
 - escribir en espanol lo mas posible
 
 ### QUESTIONS I HAVE ABOUT THE ASSIGNMENT
@@ -41,16 +39,17 @@ llegar mas cerco a siete y media que el repartidor para ganar dinero
 
 ### WHAT I'M GRADED ON
 - at least 20 commit messages. These should be descriptive and concise
-- at least a master and experimental branch
-- at least 1 merge that is non-fast-forward
+- at least a master and experimental branch (CHECK)
+- at least 1 merge that is non-fast-forward (CHECK)
 - other: do something extra (ie conflict resolution, 3-way merging, creating .gitignore files)
     - I will do a .gitignore for sure
 - have only txt files unless there is a really good reason, in which case you have to explain it in readme.md
 
 
+
 ### PROJECT JOURNAL
 
-Journal begins at the time of the fourth commit.
+Journal begins at the time of the fourth commit. I did my best to remember to record my progress in the journal. Most of the work was indeed concentrated around May 21-22, as the journal reflects.
 
 #### May 8, 2018
 Today I worked on the assignment for the first time in quite a while. I modified readme.md a bit and copied the code Professor Salazar provided for us for the files cards.h, cards.cpp, and siete-y-medio.cpp.
@@ -66,4 +65,15 @@ Hand::get_total, Hand::draw_card, Hand::list, Card::print, Card::get_value. Atte
 In the morning, worked on the main routine, specifically started the control flow for the dealer's turn. Tried a do-while loop to ensure that after one card is drawn, another is drawn unless
 the dealer's total is already more than 5.5, but moved back to a while loop and just put some code before it for the initial display of the dealer's first card. Added in if else statements 
 to the end of the round to determine who won the round. As of now it works except in the case where both the dealer and the player bust.
+
+The cards were not random each time I ran the program so I looked up how to seed the random numbers with srand(time(NULL)).
+Added messages to the end of a round based on who one. And message based on the end of the whole game based on whether the dealer or the player ran out of money.
+The only problem is that when the player busts and then the dealer busts as well, the game is ended completely, even if the bet was less than the player had left.
+It looks like it's taking twice the bet amount.
+RESOLVED. There was an extra if statement within the player's turn that deducted the bet immediately, only to have it deducted again at the end of the round.
+
+Reading over the assignment rubric again, I realize that maybe I am supposed to be doing most of my development in an experimental branch before I merge it into master?
+I could use more practice merging so I will try that out.
+
+
 
