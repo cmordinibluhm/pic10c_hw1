@@ -63,7 +63,7 @@ private:
     suit_t suit; //suit of the card
     rank_t rank; //rank of the card
     
-}; //----------------------------------end of Card class------------------------//
+}; //---------------------------------- end of Card class ------------------------//
 
 
 /**
@@ -90,7 +90,7 @@ public:
      
      @return int the sum of the ranks of all the cards in the Hand
      */
-    int get_total() const;
+    double get_total() const;
     
     // You decide what functions you'll need...
     
@@ -98,7 +98,7 @@ private:
     
     // You decide what fields you'll need...
     
-}; //----------------------------------end of Hand class------------------------//
+}; //---------------------------------- end of Hand class ------------------------//
 
 
 /**
@@ -118,6 +118,7 @@ public:
     
     int get_money() const;
     
+    void win_bet(int bet);
     void lose_bet(int bet);
     
     // You decide what functions you'll need...
@@ -126,6 +127,6 @@ private:
     int money; //amount of money the player has left
     // You decide what extra fields (if any) you'll need...
     
-}; //----------------------------------end of Player class----------------------//
+}; //---------------------------------- end of Player class ----------------------//
 
 #endif
