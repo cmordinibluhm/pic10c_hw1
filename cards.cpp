@@ -176,7 +176,7 @@ int Card::get_rank() const {
 }
 
 double Card::get_value() const {
-    if (static_cast<int>(rank) >= 10) {
+    if (static_cast<int>(rank) + 1 >= 10) {
         return .5;
     } else {
         return static_cast<int>(rank) + 1;

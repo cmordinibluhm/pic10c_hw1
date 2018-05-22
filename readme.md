@@ -52,12 +52,18 @@ llegar mas cerco a siete y media que el repartidor para ganar dinero
 
 Journal begins at the time of the fourth commit.
 
-#### 08.05.2018
+#### May 8, 2018
 Today I worked on the assignment for the first time in quite a while. I modified readme.md a bit and copied the code Professor Salazar provided for us for the files cards.h, cards.cpp, and siete-y-medio.cpp.
 
-#### 8.20.18
+#### May 20, 2018
 Today I started adding my own formatting to cards.h and cards.cpp as well as implementing some of their constructors and member functions.
 
+#### May 21, 2018
+Worked on making the main routine in siete-y-medio.cpp match the output from Prof. Salazar's sample runs. Added the functions Player::lose_bet, Player::win_bet, Player::get_money,
+Hand::get_total, Hand::draw_card, Hand::list, Card::print, Card::get_value. Attempting to preserve encapsulation and const correctness by using proper accessors. 
 
-
+#### May 22, 2018
+In the morning, worked on the main routine, specifically started the control flow for the dealer's turn. Tried a do-while loop to ensure that after one card is drawn, another is drawn unless
+the dealer's total is already more than 5.5, but moved back to a while loop and just put some code before it for the initial display of the dealer's first card. Added in if else statements 
+to the end of the round to determine who won the round. As of now it works except in the case where both the dealer and the player bust.
 
