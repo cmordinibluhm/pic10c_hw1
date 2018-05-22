@@ -175,10 +175,24 @@ int Card::get_rank() const {
    return static_cast<int>(rank) + 1 ;
 }
 
+double Card::get_value() const {
+    if (static_cast<int>(rank) >= 10) {
+        return .5;
+    } else {
+        return static_cast<int>(rank) + 1;
+    }
+}
+
 // Comparison operator for cards
 // Returns TRUE if card1 < card2
 bool Card::operator < (Card card2) const {
    return rank < card2.rank;
+}
+
+void Card::print() const {
+    std::cout << this->get_spanish_rank() << " de " << this->get_spanish_suit() << "\t \t (";
+    
+    std::cout << this->get_english_rank() << " of " << this->get_english_suit() << ") \n";
 }
 
 
@@ -193,14 +207,27 @@ Hand::Hand() : vec_of_cards() {
 }
 
 void Hand::list() const {
+    
     for (size_t i = 0; i != vec_of_cards.size(); ++i) {
+        
         std::cout << vec_of_cards[i].get_spanish_rank() << " de " << vec_of_cards[i].get_spanish_suit() << "\t \t (";
         
         std::cout << vec_of_cards[i].get_english_rank() << " of " << vec_of_cards[i].get_english_suit() << ") \n";
     }
-    
 }
 
+void Hand::draw_card(Card card) {
+    vec_of_cards.push_back(card);
+}
+
+int Hand::get_total() const {
+    double total = 0;
+    
+    for (auto i : vec_of_cards) { //range-based for loop thru the vec representing the hand
+        total += i.get_value(); //sum the ranks
+    }
+    return total;
+}
 
 
 //-----------------------------------------------------------------------------//
@@ -209,6 +236,10 @@ void Hand::list() const {
 // Implemente the member functions of the Player class here.
 
 Player::Player(int m) : money(m) { }
+
+int Player::get_money() const {
+    return money;
+}
 
 void Player::lose_bet(int bet) {
     money -= bet;

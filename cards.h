@@ -45,10 +45,18 @@ public:
     // The possible returns are: 1, 2, 3, 4, 5, 6, 7, 10, 11 and 12
     int get_rank() const;
     
+    /**
+     get_value function returns the value of the Card
+     The possible returns are: 1, 2, 3, 4, 5, 6, 7, 1/2
+     */
+    double get_value() const;
+    
     // Compare rank of two cards. E.g: Eight<Jack is true.
     // Assume Ace is always 1.
     // Useful if you want to sort the cards.
     bool operator < (Card card2) const;
+    
+    void print() const;
     
 private:
 
@@ -75,9 +83,19 @@ public:
     
     void list() const;
     
+    void draw_card(Card card);
+    
+    /**
+     returns the total rank all the cards in the hand
+     
+     @return int the sum of the ranks of all the cards in the Hand
+     */
+    int get_total() const;
+    
     // You decide what functions you'll need...
     
 private:
+    
     // You decide what fields you'll need...
     
 }; //----------------------------------end of Hand class------------------------//
@@ -98,9 +116,7 @@ public:
      */
     Player(int m = 100);
     
-    int get_money() const {
-        return money;
-    }
+    int get_money() const;
     
     void lose_bet(int bet);
     
