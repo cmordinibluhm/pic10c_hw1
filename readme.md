@@ -75,5 +75,11 @@ RESOLVED. There was an extra if statement within the player's turn that deducted
 Reading over the assignment rubric again, I realize that maybe I am supposed to be doing most of my development in an experimental branch before I merge it into master?
 I could use more practice merging so I will try that out.
 
+#### May 24, 2018
+Today I am actually starting new features in the experimental branch before merging them into the master branch once they work.
+Added condition in main routine to stop the player from being able to draw once they have reached or passed 7.5.
+Added documentation to main routine.
+Made a couple variables const in main routine.
+At this point the program works perfectly, and all I need to do is figure out how to save information to the game_log.txt file.
 
 
