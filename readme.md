@@ -35,17 +35,30 @@ llegar mas cerco a siete y media que el repartidor para ganar dinero
 - escribir en espanol lo mas posible
 
 ### QUESTIONS I HAVE ABOUT THE ASSIGNMENT
-- how do I make a gamelog.txt to store important information? I have never done this kind of thing before.
+- how do I make a gamelog.txt to store important information? I have never done this kind of thing before. (DONE)
 
 ### WHAT I'M GRADED ON
-- at least 20 commit messages. These should be descriptive and concise
+- at least 20 commit messages. These should be descriptive and concise (CHECK)
 - at least a master and experimental branch (CHECK)
 - at least 1 merge that is non-fast-forward (CHECK)
-- other: do something extra (ie conflict resolution, 3-way merging, creating .gitignore files)
-    - I will do a .gitignore for sure
-- have only txt files unless there is a really good reason, in which case you have to explain it in readme.md
+- other: do something extra (ie conflict resolution, 3-way merging, creating .gitignore files) (CHECK)
+     - My .gitignore makes a.out and gamelog.txt untracked. a.out is regenerated every time the program is compiled, so it doesn't need to be saved. Similarly, gamelog.txt is rewritten every time
+        that the program is run.
+    - When I performed my non-fastforward merge conflicts did occur and I had to resolve them.
+- have only txt files unless there is a really good reason, in which case you have to explain it in readme.md (CHECK)
 
+### Grading rubric
 
+Points will be assigned based on the following categories:
+
+| **Category** | **Description** | **Points** |
+|:-----|:----------------------------------------------------------|:---:|
+| `readme.md` | Description of the project including documentation and/or test cases. See [this document][readme-example] for an example of a `readme.md` file. | 4 |
+| Commits | You should work in increments and document your work. Try to be descriptive but concise when writing commit messages. For this project you should have at least 20 commit messages. | 4 |
+| Branching | You are free to create as many branches as you see fit, but at the very minimum there should be an `experimental` branch where you test features before merging them into your `master` branch. | 4 |
+| Merging | At some point in your development history you should merge two branches (_e.g._ `master` and `experimental`). Make sure **at least one of these merges is a non-fast-forward one**. | 4 |
+| Other | This is left open for you, topics you might want to research are: _conflict resolutions_, _three-way merging_, creating `gitignore` files, etc. | 2 |
+| Binary vs text | Version control software excels in keeping track on contents stored in text files. If your repository contains binary files (_e.g._ `.exe`, `.dll`, `.bin`, etc) there should be a very compelling reason for you to keep track of them. If this is the case you should document this reason in the `readme.md` file; otherwise you should `git rm` these files as soon as you become aware of their existence. | 2 |
 
 ### PROJECT JOURNAL
 
@@ -90,4 +103,26 @@ Program works and so does writing to gamelog.txt!
 
 Fixed .gitignore to ingnore gamelog.txt while still tracking my_repo.txt
 
+Added <iomanip> library and used it to make sure the English rank and suit of cards were aligned. Main routine and file stream formatting are all fine tuned.
+Everything seems to work perfectly, all I need now are some finishing touches.
+
+#### Project Reflection
+This assignment was enjoyable and informative. I became much more familiar with using git from the command line and even have started using the command line to edit folder and files for other classes.
+I learned about the iomanip library and got to practice using ofstreams to write to a text file which I hadn't done before.
+
+#### Concepts I Used from Class
+Const correctness for variables, functions, and function parameters.
+
+#### Just Some of the Webpages I Learned from
+https://stackoverflow.com/questions/9069061/what-is-the-difference-between-git-merge-and-git-merge-no-ff
+https://stackoverflow.com/questions/2485963/c-alignment-when-printing-cout
+https://stackoverflow.com/questions/11451535/gitignore-is-not-working
+https://en.wikipedia.org/wiki/Input/output_(C%2B%2B)#Input/output_streams
+http://www.cplusplus.com/forum/beginner/4442/
+https://cboard.cprogramming.com/c-programming/135750-scoreboard-saved-txt-file.html
+http://nvie.com/posts/a-successful-git-branching-model/
+https://www.cloudways.com/blog/manage-branches-and-resolve-conflicts-git/
+https://en.wikipedia.org/wiki/Spanish_playing_cards#Description
+https://stackoverflow.com/questions/5765645/should-you-commit-gitignore-into-the-git-repos
+https://softwareengineering.stackexchange.com/questions/342650/should-i-merge-all-commits-from-an-experimental-branch-or-only-the-valid-one
 

@@ -46,8 +46,8 @@ Card::Card(){
 }
 
 // Accessor: returns a string with the suit of the card in Spanish 
-string Card::get_spanish_suit() const { 
-   string suitName;
+std::string Card::get_spanish_suit() const {
+    std::string suitName;
    switch (suit) {
       case OROS: 
          suitName = "oros"; 
@@ -67,8 +67,8 @@ string Card::get_spanish_suit() const {
 }
 
 // Accessor: returns a string with the rank of the card in Spanish 
-string Card::get_spanish_rank() const { 
-   string rankName;
+std::string Card::get_spanish_rank() const {
+    std::string rankName;
    switch (rank) {
       case AS:
          rankName = "As"; 
@@ -105,10 +105,9 @@ string Card::get_spanish_rank() const {
    return rankName;
 }
 
-// Accessor: returns a string with the suit of the card in English 
-// This is just a stub! Modify it to your liking.
-string Card::get_english_suit() const { 
-    string suitName;
+// Accessor: returns a string with the suit of the card in English
+std::string Card::get_english_suit() const {
+    std::string suitName;
     switch (suit) {
         case OROS:
             suitName = "golds";
@@ -127,10 +126,9 @@ string Card::get_english_suit() const {
     return suitName;
 }
 
-// Accessor: returns a string with the rank of the card in English 
-// This is just a stub! Modify it to your liking.
-string Card::get_english_rank() const { 
-    string rankName;
+// Accessor: returns a string with the rank of the card in English
+std::string Card::get_english_rank() const {
+    std::string rankName;
     switch (rank) {
         case AS:
             rankName = "Ace";
@@ -190,7 +188,7 @@ bool Card::operator < (Card card2) const {
 }
 
 void Card::print() const {
-    std::cout << setw(20) << std::left << this->get_spanish_rank() + " de " + this->get_spanish_suit();
+    std::cout << std::setw(20) << std::left << this->get_spanish_rank() + " de " + this->get_spanish_suit();
     
     std::cout << "(" << this->get_english_rank() + " of " + this->get_english_suit() + "). \n";
 }
@@ -211,14 +209,14 @@ std::ostream& operator<<(std::ostream& out, const Hand& _hand) {
         
         out << '\t';
 
-        out << setw(20) << std::left << _hand.vec_of_cards[i].get_spanish_rank() + " de " + _hand.vec_of_cards[i].get_spanish_suit();
+        out << std::setw(20) << std::left << _hand.vec_of_cards[i].get_spanish_rank() + " de " + _hand.vec_of_cards[i].get_spanish_suit();
         
         out << "(" + _hand.vec_of_cards[i].get_english_rank() + " of " + _hand.vec_of_cards[i].get_english_suit() + "). \n";
     }
     return out;
 }
 
-void Hand::draw_card(Card card) {
+void Hand::draw_card(Card& card) {
     vec_of_cards.push_back(card);
 }
 

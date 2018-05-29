@@ -6,16 +6,10 @@
 #include <cstdlib>
 
 #include "cards.h"
-using namespace std;
-
-// Global constants (if any)
-
-// Non member functions declarations (if any)
-
-// Non member functions implementations (if any)
 
 int main(){
     
+    //contruct and open a file stream to gamelog.txt
     std::ofstream gamelog;
     gamelog.open("gamelog.txt");
     
@@ -35,7 +29,7 @@ int main(){
         
         Hand player_hand; //construct the player's hand
         
-        string player_draws = "y"; //string to act like a boolean to continue or end the players turn
+        std::string player_draws = "y"; //string to act like a boolean to continue or end the players turn
         
         while (player_draws == "y") { //------------------ while loop for player's turn -----------------------------//
             
@@ -134,7 +128,8 @@ int main(){
                 << "Dealer's total is " << dealer_hand.get_total() << ". \n\n";
         
         
-        ++game_no;
+        ++game_no; //increase the game number counter
+        
     } //--------------------------------------------------- end round ---------------------------------------------------//
     gamelog << "------------------------------------------------- \n";
     gamelog.close(); //close the output stream
