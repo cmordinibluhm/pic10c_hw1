@@ -190,9 +190,9 @@ bool Card::operator < (Card card2) const {
 }
 
 void Card::print() const {
-    std::cout << this->get_spanish_rank() << " de " << this->get_spanish_suit() << "\t \t (";
+    std::cout << setw(20) << std::left << this->get_spanish_rank() + " de " + this->get_spanish_suit();
     
-    std::cout << this->get_english_rank() << " of " << this->get_english_suit() << ") \n";
+    std::cout << "(" << this->get_english_rank() + " of " + this->get_english_suit() + "). \n";
 }
 
 
@@ -209,9 +209,11 @@ Hand::Hand() : vec_of_cards() {
 std::ostream& operator<<(std::ostream& out, const Hand& _hand) {
     for (size_t i = 0; i != _hand.vec_of_cards.size(); ++i) {
         
-        out << "\t" << _hand.vec_of_cards[i].get_spanish_rank() << " de " << _hand.vec_of_cards[i].get_spanish_suit() << "\t (";
+        out << '\t';
+
+        out << setw(20) << std::left << _hand.vec_of_cards[i].get_spanish_rank() + " de " + _hand.vec_of_cards[i].get_spanish_suit();
         
-        out << _hand.vec_of_cards[i].get_english_rank() << " of " << _hand.vec_of_cards[i].get_english_suit() << ") \n";
+        out << "(" + _hand.vec_of_cards[i].get_english_rank() + " of " + _hand.vec_of_cards[i].get_english_suit() + "). \n";
     }
     return out;
 }
