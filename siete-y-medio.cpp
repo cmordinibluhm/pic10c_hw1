@@ -16,12 +16,16 @@ using namespace std;
 
 int main(){
     
+    std::ofstream gamelog;
+    gamelog.open("gamelog.txt");
+    
     srand(time(NULL)); //see random numbers
     
     Player player; //construct a Player with 100 pesos
     Player dealer(900); //construct a dealer with 900 pesos
     
     bool new_round = true; //true as long as the player has money to bet or the dealer hasn't lost 900
+    int game_no = 0; //track the number of games/rounds played
     
     while (new_round) { //------------------------------- while loop for round ------------------------------------------//
         
@@ -120,8 +124,13 @@ int main(){
             std::cout << "Congratulations. You beat the casino!";
         }
         
+        
+        //----------- record the game in gamelog.txt ------------
+        gamelog << "Game: " << game_no << '\t' << "Money left: $" << player.get_money() << '\n' << "Bet: " << bet << '\n';
+        
+        ++game_no;
     } //--------------------------------------------------- end round ---------------------------------------------------//
-    
+    gamelog.close(); //close the output stream
     
     std::cin.get();
     std::cin.get();

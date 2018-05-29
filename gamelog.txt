@@ -1,0 +1,6 @@
+Game: 0	Money left: $150
+Bet: 50
+Game: 1	Money left: $225
+Bet: 75
+Game: 2	Money left: $0
+Bet: 225
