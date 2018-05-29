@@ -88,4 +88,6 @@ I had previously been using the Hand::list() to display the player's and dealer'
 in gamelog.txt instead of to the console. As I should have from the beginning, I got rid of the Hand::list() function and instead wrote a more gereric nonmember overloaded operator<<.
 Program works and so does writing to gamelog.txt!
 
+Fixed .gitignore to ingnore gamelog.txt while still tracking my_repo.txt
+
 
