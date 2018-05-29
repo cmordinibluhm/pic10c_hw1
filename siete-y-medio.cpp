@@ -25,7 +25,7 @@ int main(){
     Player dealer(900); //construct a dealer with 900 pesos
     
     bool new_round = true; //true as long as the player has money to bet or the dealer hasn't lost 900
-    int game_no = 0; //track the number of games/rounds played
+    int game_no = 1; //track the number of games/rounds played
     
     while (new_round) { //------------------------------- while loop for round ------------------------------------------//
         
@@ -123,14 +123,20 @@ int main(){
         
         
         //----------- record the game in gamelog.txt ------------
-        gamelog << "---------------------------------------------- \n"
-                << "Game: " << game_no << '\t' << "Money left: $" << player.get_money() << '\n'
+        gamelog << "------------------------------------------------- \n\n"
+                << "Game number: " << game_no << "\t\t" << "Money left: $" << player.get_money() << '\n'
                 << "Bet: " << bet << "\n\n"
                 << "Your cards: \n"
-                << player_hand;
+                << player_hand
+                << "Your total: " << player_hand.get_total() << ".\n\n"
+                << "Dealer's cards: \n"
+                << dealer_hand
+                << "Dealer's total is " << dealer_hand.get_total() << ". \n\n";
+        
         
         ++game_no;
     } //--------------------------------------------------- end round ---------------------------------------------------//
+    gamelog << "------------------------------------------------- \n";
     gamelog.close(); //close the output stream
     
     std::cin.get();
