@@ -205,14 +205,15 @@ Hand::Hand() : vec_of_cards() {
     vec_of_cards.push_back(Card());
 }
 
-void Hand::list() const {
-    
-    for (size_t i = 0; i != vec_of_cards.size(); ++i) {
+//non-member
+std::ostream& operator<<(std::ostream& out, const Hand& _hand) {
+    for (size_t i = 0; i != _hand.vec_of_cards.size(); ++i) {
         
-        std::cout << "\t" << vec_of_cards[i].get_spanish_rank() << " de " << vec_of_cards[i].get_spanish_suit() << "\t (";
+        out << "\t" << _hand.vec_of_cards[i].get_spanish_rank() << " de " << _hand.vec_of_cards[i].get_spanish_suit() << "\t (";
         
-        std::cout << vec_of_cards[i].get_english_rank() << " of " << vec_of_cards[i].get_english_suit() << ") \n";
+        out << _hand.vec_of_cards[i].get_english_rank() << " of " << _hand.vec_of_cards[i].get_english_suit() << ") \n";
     }
+    return out;
 }
 
 void Hand::draw_card(Card card) {

@@ -39,8 +39,7 @@ int main(){
         
         while (player_draws == "y") { //------------------ while loop for player's turn -----------------------------//
             
-            std::cout << "Your cards: \n ";
-            player_hand.list(); //display all the players cards
+            std::cout << "Your cards: \n " << player_hand; //display all the players cards
             
             std::cout << "Your total is " << player_hand.get_total() << ". "; //display the player's total
             
@@ -67,8 +66,7 @@ int main(){
         
         Hand dealer_hand; //construct the dealer's hand
         
-        std::cout << "Dealer's cards: \n";
-        dealer_hand.list(); //display all the dealer's cards
+        std::cout << "Dealer's cards: \n" << dealer_hand; //display all the dealer's cards
         
         std::cout << "The Dealer's total is: " << dealer_hand.get_total() << "\n"; //display the dealer's total
         
@@ -82,8 +80,7 @@ int main(){
                 std::cout << '\n';
             }
              
-             std::cout << "Dealer's cards: \n";
-             dealer_hand.list(); //displayer all the dealer's cards
+             std::cout << "Dealer's cards: \n" << dealer_hand; //displayer all the dealer's cards
              
              std::cout << "The Dealer's total is: " << dealer_hand.get_total() << "\n\n"; //display the dealer's total
         } //------------------------------------------ end dealer's turn -----------------------------------------//
@@ -126,7 +123,11 @@ int main(){
         
         
         //----------- record the game in gamelog.txt ------------
-        gamelog << "Game: " << game_no << '\t' << "Money left: $" << player.get_money() << '\n' << "Bet: " << bet << '\n';
+        gamelog << "---------------------------------------------- \n"
+                << "Game: " << game_no << '\t' << "Money left: $" << player.get_money() << '\n'
+                << "Bet: " << bet << "\n\n"
+                << "Your cards: \n"
+                << player_hand;
         
         ++game_no;
     } //--------------------------------------------------- end round ---------------------------------------------------//

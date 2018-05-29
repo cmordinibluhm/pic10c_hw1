@@ -85,8 +85,6 @@ public:
     
     virtual ~Hand() {}
     
-    void list() const;
-    
     void draw_card(Card card);
     
     /**
@@ -104,6 +102,13 @@ private:
     
 }; //---------------------------------- end of Hand class ------------------------//
 
+/**
+ insertion operator
+ 
+ @param out output stream by reference
+ @param _hand Hand object by reference
+ */
+ std::ostream& operator<<(std::ostream& out, const Hand& _hand);
 
 /**
  Player class stores the money that the player has

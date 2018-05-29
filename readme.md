@@ -84,5 +84,8 @@ At this point the program works perfectly, and all I need to do is figure out ho
 UPDATE: Successfully added an output file stream, pushed some information to it, and checked that it did in fact appear in gamelog.txt. I have hardly worked with file streams before this,
 so this is good practice. Easier than I thought.
 
+I had previously been using the Hand::list() to display the player's and dealer's cards. This simply used std::cout to print to the console. This became a problem when I needed to list the cards
+in gamelog.txt instead of to the console. As I should have from the beginning, I got rid of the Hand::list() function and instead wrote a more gereric nonmember overloaded operator<<.
+Program works and so does writing to gamelog.txt!
 
 
