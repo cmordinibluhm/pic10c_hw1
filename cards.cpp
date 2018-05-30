@@ -183,7 +183,7 @@ double Card::get_value() const {
 
 // Comparison operator for cards
 // Returns TRUE if card1 < card2
-bool Card::operator < (Card card2) const {
+bool Card::operator < (const Card& card2) const {
    return rank < card2.rank;
 }
 
@@ -205,6 +205,7 @@ Hand::Hand() : vec_of_cards() {
 
 //non-member
 std::ostream& operator<<(std::ostream& out, const Hand& _hand) {
+    
     for (size_t i = 0; i != _hand.vec_of_cards.size(); ++i) {
         
         out << '\t';

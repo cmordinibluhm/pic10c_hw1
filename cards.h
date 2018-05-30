@@ -28,13 +28,7 @@ class Card {
 public:
     // Constructor assigns random rank & suit to card.
     Card();
-    
-    /**
-     virtual constructor
-     
-     */
-    virtual ~Card() {}
-    
+
     /**
      accessors for Spanish suit and rank
      
@@ -107,12 +101,6 @@ public:
     Hand();
     
     /**
-     virtual destructor for Hand
-     
-     */
-    virtual ~Hand() {}
-    
-    /**
      draw_card function takes a card and adds it to a hand
      
      @param card a Card object by reference to be added to vec_of_cards
@@ -151,12 +139,6 @@ public:
      @param m the amount of money the Player begins with (default 100)
      */
     Player(int m = 100);
-    
-    /**
-     virtual destructor
-     
-     */
-    virtual ~Player() {}
     
     /**
      accessor for the amount of money the Player has left
